@@ -134,8 +134,10 @@ casper.waitForSelector("#MSG_BOX_OK_BUTTON",
         //this.click("#MSG_BOX_OK_BUTTON");
         captureFunc(authCode+'_capture_MSG_BOX_OK_BUTTON');
         //this.open('/');
-        this.evaluate(function(){
-            window.location = 'http://valet.slateapps.com';
+        this.evaluate(function(slateValetUrl){
+            window.location = slateValetUrl;
+        },{
+            slateValetUrl: slateValetUrl
         });
     },
     function fail() {
@@ -154,7 +156,7 @@ casper.waitForSelector('.welcomeTo',
 
 });
 
-casper.waitForSelector('.icoMenu',
+/*casper.waitForSelector('.icoMenu',
     function success() {
         casper.wait(5 * 1000, function(){
             captureFunc(authCode+'_capture_LANDING_SCREEN');
@@ -163,7 +165,7 @@ casper.waitForSelector('.icoMenu',
     function fail() {
         captureFunc(authCode+'_capture_LANDING_SCREEN_fail');
 
-    });
+    });*/
 
 
 casper.run(function() {});
