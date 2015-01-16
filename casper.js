@@ -1,8 +1,16 @@
-var casper = require("casper").create();
-
-//var page = require('webpage').create();
-//page.settings.clearMemoryCaches = true;
-//casper.options.page = page;
+var casper = require("casper").create({
+    verbose: true,
+    logLevel: 'debug',
+    waitTimeout: 20 * 1000,
+    viewportSize: {
+        width: 1024,
+        height: 768
+    },
+    //userAgent: '',
+    pageSettings: {
+        clearMemoryCaches: true
+    }
+});
 
 casper.echo("Casper CLI passed args:");
 require("utils").dump(casper.cli.args);
@@ -11,11 +19,17 @@ var slateValetUrl = casper.cli.args[0].toString();
 var slateServerUrl = casper.cli.args[1].toString();
 var authCode = casper.cli.args[2].toString();
 
-casper.options.viewportSize = {width: 1024, height: 768};
-casper.options.waitTimeout = 20 * 1000; 
-//casper.options.verbose = true;
-casper.options.logLevel = "debug";
-casper.options.pageSettings.clearMemoryCaches = true;
+casper.options.onResourceRequested = function(C, requestData, request) {
+    if ((/http:\/\/.+?.css/gi).test(requestData['url']) || requestData['Content-Type'] == 'text/css') {
+        //console.log(‘Skipping CSS file: ’ + requestData[‘url’]);
+        //request.abort();
+    }
+
+    if ( requestData['url'].search('http://')!=-1 || requestData['url'].search('https://')!=-1 ) {
+        casper.echo('REQUEST:  '+requestData['url']);
+    }
+}
+
 
 //var x = require('casper').selectXPath;
 casper.on('page.error', function(msg, trace) {
@@ -30,20 +44,25 @@ casper.on('remote.message', function(msg) {
     this.echo('    ' + msg);
 });
 
-casper.on( 'page.error', function (msg, trace) {
-    this.echo( '  Error: ' + msg, 'ERROR' );
-});
-
-phantom.clearCookies();
+//phantom.clearCookies();
 
 function clearStorage(){
+
+    //casper.echo('CURRENT COOKIE:  '+document.cookie);
+
     casper.evaluate(function() {
-        localStorage.clear();
-        sessionStorage.clear();
+        var promise = services.WebSqlKeyValue.clear();
+        promise.then(function(){
+            localStorage.clear();
+            console.log('WebSQL cleared....');
+            //sessionStorage.clear();
+        });
     });
+
+    casper.page.setCookies(""); //clears the cookies
 }
 
-function hashChange(){
+/*function hashChange(){
     casper.evaluate(function(){
         function hashHandler( ){
             this.oldHash = window.location.hash;
@@ -62,76 +81,89 @@ function hashChange(){
         new hashHandler();
 
     });
-}
+}*/
 
 var captureCounter = 1;
 function captureFunc( name ){
-    casper.capture(captureCounter+'_'+name);
+    var captureName = captureCounter+'_'+name+'_'+casper.getCurrentUrl();
+    captureName = captureName.replace(/[^a-z0-9]/gi, '_').toLowerCase()+'.png';
+    casper.echo(captureName);
+    casper.capture(captureName);
     captureCounter+=1;
 }
 
 casper.start(slateValetUrl, function(){
     clearStorage();
-    hashChange();
+    this.reload(function() {
+        this.echo("****** loaded again after clearing local storage *******");
+    });
 });
 
-casper.then(function(){
-    casper.waitForSelector("input#ext-element-17",
-        function success() {
-            captureFunc(authCode+'_capture_SERVER_URL.png');
-            this.sendKeys("input#ext-element-17", slateServerUrl);
-        },
-        function fail() {
-            captureFunc(authCode + '_capture_SERVER_URL_fail.png');
+casper.waitForSelector("input#ext-element-17",
+    function success() {
+        captureFunc(authCode+'_capture_SERVER_URL');
+        this.sendKeys("input#ext-element-17", slateServerUrl);
+    },
+    function fail() {
+        captureFunc(authCode + '_capture_SERVER_URL_fail');
+    });
+
+
+casper.waitForSelector("div#SERVER_BASE_URL_SUBMIT_BUTTON",
+    function success() {
+        captureFunc(authCode+'_capture_SERVER_BASE_URL_SUBMIT_BUTTON');
+        this.click("div#SERVER_BASE_URL_SUBMIT_BUTTON");
+    },
+    function fail() {
+        captureFunc(authCode+'_capture_SERVER_BASE_URL_SUBMIT_BUTTON_fail');
+    });
+
+casper.waitForSelector("div#KEY_PAD_1",
+    function success() {
+        this.click("div#KEY_PAD_"+authCode.substr(0, 1));
+        this.click("div#KEY_PAD_"+authCode.substr(1, 1));
+        this.click("div#KEY_PAD_"+authCode.substr(2, 1));
+        this.click("div#KEY_PAD_"+authCode.substr(3, 1));
+        this.click("div#KEY_PAD_"+authCode.substr(4, 1));
+    },
+    function fail() {
+    });
+
+casper.waitForSelector("#MSG_BOX_OK_BUTTON",
+    function success() {
+        //this.click("#MSG_BOX_OK_BUTTON");
+        captureFunc(authCode+'_capture_MSG_BOX_OK_BUTTON');
+        //this.open('/');
+        this.evaluate(function(){
+            window.location = 'http://valet.slateapps.com';
         });
+    },
+    function fail() {
+        captureFunc(authCode+'_capture_MSG_BOX_OK_BUTTON_fail');
+    });
+
+casper.waitForSelector('.welcomeTo',
+    function success() {
+        casper.wait(10 * 1000, function(){
+            captureFunc(authCode+'_capture_SELECT_LANGUAGE');
+            this.click('.frontLanguageFlag');
+        });
+    },
+    function fail() {
+        captureFunc(authCode+'_capture_SELECT_LANGUAGE_fail');
+
 });
 
-casper.then(function(){
-    casper.waitForSelector("div#SERVER_BASE_URL_SUBMIT_BUTTON",
-        function success() {
-            captureFunc(authCode+'_capture_SERVER_BASE_URL_SUBMIT_BUTTON.png');
-            this.click("div#SERVER_BASE_URL_SUBMIT_BUTTON");
-        },
-        function fail() {
-            captureFunc(authCode+'_capture_SERVER_BASE_URL_SUBMIT_BUTTON_fail.png');
+casper.waitForSelector('.icoMenu',
+    function success() {
+        casper.wait(5 * 1000, function(){
+            captureFunc(authCode+'_capture_LANDING_SCREEN');
         });
-});
+    },
+    function fail() {
+        captureFunc(authCode+'_capture_LANDING_SCREEN_fail');
 
-casper.then(function(){
-    casper.waitForSelector("div#KEY_PAD_1",
-        function success() {
-            this.click("div#KEY_PAD_"+authCode.substr(0, 1));
-            this.click("div#KEY_PAD_"+authCode.substr(1, 1));
-            this.click("div#KEY_PAD_"+authCode.substr(2, 1));
-            this.click("div#KEY_PAD_"+authCode.substr(3, 1));
-            this.click("div#KEY_PAD_"+authCode.substr(4, 1));
-        },
-        function fail() {
-        });
-});
-
-casper.then(function(){
-    casper.waitForSelector("#MSG_BOX_OK_BUTTON",
-        function success() {
-            this.click("#MSG_BOX_OK_BUTTON");
-            captureFunc(authCode+'_capture_MSG_BOX_OK_BUTTON.png');
-        },
-        function fail() {
-            captureFunc(authCode+'_capture_MSG_BOX_OK_BUTTON_fail.png');
-        });
-});
-
-casper.then(function(){
-    casper.waitForUrl(/selectlanguage/,
-        function success() {
-            casper.wait(10 * 1000, function(){
-                captureFunc(authCode+'_capture_SELECT_LANGUAGE.png');
-            });
-        },
-        function fail() {
-            captureFunc(authCode+'_capture_SELECT_LANGUAGE_fail.png');
-        });
-});
+    });
 
 
 casper.run(function() {});
