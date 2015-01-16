@@ -9,7 +9,9 @@ var casper = require("casper").create({
     //userAgent: '',
     pageSettings: {
         clearMemoryCaches: true
-    }
+    },
+
+    clientScripts: ['jquery-2.1.3.js']
 });
 
 casper.echo("Casper CLI passed args:");
@@ -18,6 +20,8 @@ require("utils").dump(casper.cli.args);
 var slateValetUrl = casper.cli.args[0].toString();
 var slateServerUrl = casper.cli.args[1].toString();
 var authCode = casper.cli.args[2].toString();
+
+var currentElement = '';
 
 casper.options.onResourceRequested = function(C, requestData, request) {
     if ((/http:\/\/.+?.css/gi).test(requestData['url']) || requestData['Content-Type'] == 'text/css') {
@@ -148,13 +152,57 @@ casper.waitForSelector('.welcomeTo',
     function success() {
         casper.wait(10 * 1000, function(){
             captureFunc(authCode+'_capture_SELECT_LANGUAGE');
-            this.click('.frontLanguageFlag');
+            //this.click('.frontLanguageFlag');
+
+            ajaxLoop();
         });
     },
     function fail() {
         captureFunc(authCode+'_capture_SELECT_LANGUAGE_fail');
 
 });
+
+//__utils__.sendAJAX
+
+function ajaxLoop(){
+
+    var element = casper.evaluate(function(){
+
+        var response;
+
+        $.ajax({
+            url: 'http://www.prowebsoftware.net/element.json',
+            success: function( data ) {
+                console.log('PAGE ELEMENT: '+data.element);
+                if ( data && data.element ) {
+                    response = data.element;
+                }else{
+                    response = false;
+                }
+            },
+            async: false
+        });
+
+        return response;
+
+    });
+
+    //setTimeout(ajaxLoop,5000);
+
+    try {
+        casper.click(element);
+    }catch(e){
+        
+    }
+    casper.wait(5 * 1000, function(){
+        if ( currentElement !== element ) {
+            captureFunc(authCode + '_' + element);
+        }
+        currentElement = element;
+
+        ajaxLoop();
+    });
+}
 
 /*casper.waitForSelector('.icoMenu',
     function success() {
