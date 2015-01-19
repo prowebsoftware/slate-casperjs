@@ -192,7 +192,7 @@ function ajaxLoop(){
     try {
         casper.click(element);
     }catch(e){
-        
+
     }
     casper.wait(5 * 1000, function(){
         if ( currentElement !== element ) {
