@@ -189,14 +189,16 @@ function ajaxLoop(){
 
     //setTimeout(ajaxLoop,5000);
 
-    try {
-        casper.click(element);
-    }catch(e){
-
-    }
     casper.wait(5 * 1000, function(){
         if ( currentElement !== element ) {
-            captureFunc(authCode + '_' + element);
+            try {
+                casper.click(element);
+            }catch(e){
+
+            }
+            casper.wait(3 * 1000, function(){
+                captureFunc(authCode + '_' + element);
+            });
         }
         currentElement = element;
 
