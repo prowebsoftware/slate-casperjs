@@ -171,7 +171,7 @@ function ajaxLoop(){
         var response;
 
         $.ajax({
-            url: 'http://www.prowebsoftware.net/element.json',
+            url: 'http://prowebsoftware.redirectme.net:8082/element.json',
             success: function( data ) {
                 console.log('PAGE ELEMENT: '+data.element);
                 if ( data && data.element ) {
@@ -197,7 +197,7 @@ function ajaxLoop(){
 
             }
             casper.wait(3 * 1000, function(){
-                captureFunc(authCode + '_' + element);
+                captureFunc(authCode + '_' + (element ? element : 'screenshot'));
             });
         }
         currentElement = element;
