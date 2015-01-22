@@ -61,8 +61,9 @@ function clearStorage(){
             console.log('********** WebSQL and localstorage cleared **********');
             //sessionStorage.clear();
         }, function( e ){
-            console.log('********** WebSQL and localstorage clear FAILED!!!! **********');
+            console.log('********** WebSQL clear FAILED ....clearing local storage anyway...**********');
             console.log(e);
+            localStorage.clear();
         });
     });
 
