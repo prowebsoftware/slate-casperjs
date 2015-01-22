@@ -29,7 +29,7 @@ casper.options.onResourceRequested = function(C, requestData, networkRequest) {
         //request.abort();
     }
 
-    console.log('Request (#' + requestData.id + '): ' + JSON.stringify(requestData))
+    console.log('Request (#' + requestData.id + '): ' + JSON.stringify(requestData, undefined, 2))
 
     if ( requestData['url'].search('http://')!=-1 || requestData['url'].search('https://')!=-1 ) {
         //casper.echo('REQUEST:  '+requestData['url']);
@@ -38,7 +38,7 @@ casper.options.onResourceRequested = function(C, requestData, networkRequest) {
 
 casper.options.onResourceReceived = function(C, response) {
 
-    console.log('Response (#' + response.id + ', stage "' + response.stage + '"): ' + JSON.stringify(response));
+    console.log('Response (#' + response.id + ', stage "' + response.stage + '"): ' + JSON.stringify(response, undefined, 2));
 }
 
 
