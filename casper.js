@@ -34,7 +34,7 @@ casper.options.onResourceRequested = function(C, requestData, request) {
     }
 }
 
-casper.options.onResourceReceived = function(response) {
+casper.options.onResourceReceived = function(C, response) {
 
     console.log('Response (#' + response.id + ', stage "' + response.stage + '"): ' + JSON.stringify(response));
 }
