@@ -58,8 +58,11 @@ function clearStorage(){
         var promise = services.WebSqlKeyValue.clear();
         promise.then(function(){
             localStorage.clear();
-            console.log('WebSQL cleared....');
+            console.log('********** WebSQL and localstorage cleared **********');
             //sessionStorage.clear();
+        }, function( e ){
+            console.log('********** WebSQL and localstorage clear FAILED!!!! **********');
+            console.log(e);
         });
     });
 
