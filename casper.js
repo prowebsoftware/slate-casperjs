@@ -34,6 +34,11 @@ casper.options.onResourceRequested = function(C, requestData, request) {
     }
 }
 
+casper.options.onResourceReceived = function(response) {
+
+    console.log('Response (#' + response.id + ', stage "' + response.stage + '"): ' + JSON.stringify(response));
+}
+
 
 //var x = require('casper').selectXPath;
 casper.on('page.error', function(msg, trace) {
