@@ -23,14 +23,16 @@ var authCode = casper.cli.args[2].toString();
 
 var currentElement = '';
 
-casper.options.onResourceRequested = function(C, requestData, request) {
+casper.options.onResourceRequested = function(C, requestData, networkRequest) {
     if ((/http:\/\/.+?.css/gi).test(requestData['url']) || requestData['Content-Type'] == 'text/css') {
         //console.log(‘Skipping CSS file: ’ + requestData[‘url’]);
         //request.abort();
     }
 
+    console.log('Request (#' + requestData.id + '): ' + JSON.stringify(requestData))
+
     if ( requestData['url'].search('http://')!=-1 || requestData['url'].search('https://')!=-1 ) {
-        casper.echo('REQUEST:  '+requestData['url']);
+        //casper.echo('REQUEST:  '+requestData['url']);
     }
 }
 
