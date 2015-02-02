@@ -1,7 +1,12 @@
+var fs = require('fs');
+//var fname = new Date().getTime() + '.txt';
+var fname = 'links.txt';
+var save = fs.pathJoin(fs.workingDirectory, 'gengoLinks', fname);
+
 var casper = require("casper").create({
     //verbose: true,
     //logLevel: 'debug',
-    waitTimeout: 20 * 1000,
+    waitTimeout: 60 * 1000,
     viewportSize: {
         width: 1024,
         height: 768
@@ -86,18 +91,21 @@ casper.then(function() {
 });
 
 
-casper.then(function() {
+/*casper.then(function() {
     this.each(links, function() {
         i++; // change the link being opened (has to be here specifically)
         this.thenOpen(links[i], function() {
             this.echo(links[i]); // display the title of page
         });
     });
-});
-
+});*/
 
 casper.run(function() {
     // echo results in some pretty fashion
     this.echo(links.length + ' links found:');
-    this.echo(' - ' + links.join('\n - ')).exit();
+    this.echo(links.join('\n'));
+
+    fs.write(save, links.join('\n'), 'w');
+
+    this.exit();
 });
