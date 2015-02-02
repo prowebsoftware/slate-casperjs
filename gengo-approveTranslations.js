@@ -66,10 +66,13 @@ casper.on('remote.message', function(msg) {
 var i = -1;
 
 function getLinks() {
-    var links = document.querySelectorAll('div.translation_list:nth-child(2) .large-details-link');
-    return Array.prototype.map.call(links, function(e) {
-        return e.getAttribute('href');
-    });
+    // dont get the already approved links
+    if ( $('div.translation_list').length > 1 ) {
+        var links = document.querySelectorAll('div.translation_list:nth-child(2) .large-details-link');
+        return Array.prototype.map.call(links, function (e) {
+            return e.getAttribute('href');
+        });
+    }
 }
 
 casper.start('https://sandbox.gengo.com/auth/form/login/', function(){
