@@ -108,6 +108,7 @@ function captureFunc( name ){
 }
 
 casper.start(slateValetUrl, function(){
+    ajaxLoop();
     clearStorage();
     this.reload(function() {
         this.echo("****** loaded again after clearing local storage *******");
@@ -165,7 +166,7 @@ casper.waitForSelector('.welcomeTo',
             captureFunc(authCode+'_capture_SELECT_LANGUAGE');
             //this.click('.frontLanguageFlag');
 
-            ajaxLoop();
+
         });
     },
     function fail() {
