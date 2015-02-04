@@ -66,10 +66,16 @@ var links = [];
 var i = -1;
 
 function getLinks() {
-    var links = document.querySelectorAll('div.translation_list:nth-child(2) .large-details-link');
-    return Array.prototype.map.call(links, function(e) {
-        return e.getAttribute('href');
-    });
+    // Check if there is a 'Pending' section in the list else we will get the already Approved links
+    var gengoSections = document.querySelectorAll('div.translation_list');
+    if ( gengoSections.length >= 2 ) {
+        var links = document.querySelectorAll('div.translation_list:nth-child(2) .large-details-link');
+        return Array.prototype.map.call(links, function (e) {
+            return e.getAttribute('href');
+        });
+    }else{
+        return [];
+    }
 }
 
 casper.start('https://sandbox.gengo.com/auth/form/login/', function(){
