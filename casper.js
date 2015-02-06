@@ -1,7 +1,7 @@
 var casper = require("casper").create({
     //verbose: true,
     //logLevel: 'debug',
-    waitTimeout: 75 * 1000,
+    waitTimeout: 20 * 1000,
     viewportSize: {
         width: 1024,
         height: 768
@@ -129,7 +129,7 @@ casper.waitForSelector('.welcomeTo',
     function fail() {
         captureFunc(authCode+'_capture_SELECT_LANGUAGE_fail');
         casper.echo('_capture_SELECT_LANGUAGE_fail');
-        casper.exit();
+        //casper.exit(); // client should recover from here so dont exit
     });
 
 casper.then(function(){
