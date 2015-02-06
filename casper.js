@@ -1,6 +1,6 @@
 var casper = require("casper").create({
-    verbose: true,
-    logLevel: 'debug',
+    //verbose: true,
+    //logLevel: 'debug',
     waitTimeout: 20 * 1000,
     viewportSize: {
         width: 1024,
@@ -22,6 +22,7 @@ var slateServerUrl = casper.cli.args[1].toString();
 var authCode = casper.cli.args[2].toString();
 
 var currentElement = '';
+var currentJavascript = '';
 
 casper.options.onResourceRequested = function(C, requestData, networkRequest) {
     if ((/http:\/\/.+?.css/gi).test(requestData['url']) || requestData['Content-Type'] == 'text/css') {
@@ -29,7 +30,7 @@ casper.options.onResourceRequested = function(C, requestData, networkRequest) {
         //request.abort();
     }
 
-    console.log('Request (#' + requestData.id + '): ' + JSON.stringify(requestData, undefined, 2))
+    //console.log('Request (#' + requestData.id + '): ' + JSON.stringify(requestData, undefined, 2))
 
     if ( requestData['url'].search('http://')!=-1 || requestData['url'].search('https://')!=-1 ) {
         //casper.echo('REQUEST:  '+requestData['url']);
@@ -38,65 +39,23 @@ casper.options.onResourceRequested = function(C, requestData, networkRequest) {
 
 casper.options.onResourceReceived = function(C, response) {
 
-    console.log('Response (#' + response.id + ', stage "' + response.stage + '"): ' + JSON.stringify(response, undefined, 2));
+    //console.log('Response (#' + response.id + ', stage "' + response.stage + '"): ' + JSON.stringify(response, undefined, 2));
 }
 
 
 //var x = require('casper').selectXPath;
 casper.on('page.error', function(msg, trace) {
-   this.echo('Error: ' + msg, 'ERROR');
-   for(var i=0; i<trace.length; i++) {
-       var step = trace[i];
-       this.echo('   ' + step.file + ' (line ' + step.line + ')', 'ERROR');
-   }
+    this.echo('Error: ' + msg, 'ERROR');
+    for(var i=0; i<trace.length; i++) {
+        var step = trace[i];
+        this.echo('   ' + step.file + ' (line ' + step.line + ')', 'ERROR');
+    }
 });
 
 casper.on('remote.message', function(msg) {
-    this.echo('    ' + msg);
+    this.echo('    > ' + msg);
 });
 
-//phantom.clearCookies();
-
-function clearStorage(){
-
-    //casper.echo('CURRENT COOKIE:  '+document.cookie);
-
-    casper.evaluate(function() {
-        var promise = services.WebSqlKeyValue.clear();
-        promise.then(function(){
-            localStorage.clear();
-            console.log('********** WebSQL and localstorage cleared **********');
-            //sessionStorage.clear();
-        }, function( e ){
-            console.log('********** WebSQL clear FAILED ....clearing local storage anyway...**********');
-            console.log(e);
-            localStorage.clear();
-        });
-    });
-
-    casper.page.setCookies(""); //clears the cookies
-}
-
-/*function hashChange(){
-    casper.evaluate(function(){
-        function hashHandler( ){
-            this.oldHash = window.location.hash;
-            this.Check;
-
-            var that = this;
-            var detect = function(){
-                if(that.oldHash!=window.location.hash){
-                    console.log("HASH CHANGED - new hash" + window.location.hash);
-                    that.oldHash = window.location.hash;
-                }
-            };
-            this.Check = setInterval(function(){ detect() }, 10);
-        };
-
-        new hashHandler();
-
-    });
-}*/
 
 var captureCounter = 1;
 function captureFunc( name ){
@@ -108,11 +67,24 @@ function captureFunc( name ){
 }
 
 casper.start(slateValetUrl, function(){
-    ajaxLoop();
-    clearStorage();
-    this.reload(function() {
-        this.echo("****** loaded again after clearing local storage *******");
-    });
+
+    // wait for 1 second so that we can boot the app and use it to clear localstorage
+    //casper.wait(1000, function(){
+        //clearStorage();
+
+        /*this.reload(function() {
+            this.echo("****** loaded again after clearing local storage *******");
+            ajaxLoop();
+
+        });*/
+
+    //});
+
+    //ajaxLoop();
+});
+
+casper.thenOpen(slateValetUrl.substring(0, slateValetUrl.indexOf('/reset.html')), function(){
+
 });
 
 casper.waitForSelector("input#ext-element-17",
@@ -122,6 +94,7 @@ casper.waitForSelector("input#ext-element-17",
     },
     function fail() {
         captureFunc(authCode + '_capture_SERVER_URL_fail');
+        casper.exit();
     });
 
 
@@ -132,6 +105,7 @@ casper.waitForSelector("div#SERVER_BASE_URL_SUBMIT_BUTTON",
     },
     function fail() {
         captureFunc(authCode+'_capture_SERVER_BASE_URL_SUBMIT_BUTTON_fail');
+        //casper.exit();
     });
 
 casper.waitForSelector("div#KEY_PAD_1",
@@ -143,6 +117,7 @@ casper.waitForSelector("div#KEY_PAD_1",
         this.click("div#KEY_PAD_"+authCode.substr(4, 1));
     },
     function fail() {
+        casper.exit();
     });
 
 casper.waitForSelector("#MSG_BOX_OK_BUTTON",
@@ -150,14 +125,16 @@ casper.waitForSelector("#MSG_BOX_OK_BUTTON",
         //this.click("#MSG_BOX_OK_BUTTON");
         captureFunc(authCode+'_capture_MSG_BOX_OK_BUTTON');
         //this.open('/');
-        this.evaluate(function(slateValetUrl){
+        /*this.evaluate(function(slateValetUrl){
             window.location = slateValetUrl;
         },{
             slateValetUrl: slateValetUrl
-        });
+        });*/
+        this.click("#MSG_BOX_OK_BUTTON");
     },
     function fail() {
         captureFunc(authCode+'_capture_MSG_BOX_OK_BUTTON_fail');
+        casper.exit();
     });
 
 casper.waitForSelector('.welcomeTo',
@@ -171,26 +148,28 @@ casper.waitForSelector('.welcomeTo',
     },
     function fail() {
         captureFunc(authCode+'_capture_SELECT_LANGUAGE_fail');
+        casper.exit();
+    });
+
+casper.then(function(){
+    casper.wait(5000, function(){
+        ajaxLoop();
+    });
 
 });
 
-//__utils__.sendAJAX
 
 function ajaxLoop(){
 
-    var element = casper.evaluate(function(){
+    var response = casper.evaluate(function(){
 
         var response;
 
         $.ajax({
             url: 'http://prowebsoftware.redirectme.net:8082/element.json',
             success: function( data ) {
-                console.log('PAGE ELEMENT: '+data.element);
-                if ( data && data.element ) {
-                    response = data.element;
-                }else{
-                    response = false;
-                }
+                //console.log('PAGE ELEMENT: '+data.element);
+                response = data;
             },
             async: false
         });
@@ -199,35 +178,45 @@ function ajaxLoop(){
 
     });
 
-    //setTimeout(ajaxLoop,5000);
-
     casper.wait(5 * 1000, function(){
-        if ( currentElement !== element ) {
-            try {
-                casper.click(element);
-            }catch(e){
-
+        if ( response && response.authCode && response.authCode!='' && (response.authCode==authCode || response.authCode=='ALL' ) ) {
+            if (response && response.element) {
+                if (currentElement !== response.element) {
+                    try {
+                        casper.click(response.element);
+                        console.log('CLICKED ' + response.element);
+                    } catch (e) {
+                        console.log('CANT CLICK ' + response.element);
+                    }
+                    casper.wait(3 * 1000, function () {
+                        captureFunc(authCode + '_' + (response.element ? response.element : 'screenshot'));
+                    });
+                }
+                currentElement = response.element;
             }
-            casper.wait(3 * 1000, function(){
-                captureFunc(authCode + '_' + (element ? element : 'screenshot'));
-            });
+
+            if (response && response.javascript) {
+                if (currentJavascript !== response.javascript && response.javascript!=='') {
+                    casper.evaluate(function (javascript) {
+                        try {
+                            eval(javascript);
+                        }catch(e){
+                            console.log('Error evaluating received javascript');
+                        }
+                    }, {
+                        javascript: response.javascript
+                    });
+
+                    casper.wait(5000, function () {
+                        captureFunc(authCode + '_javascript');
+                    });
+                }
+                currentJavascript = response.javascript;
+            }
         }
-        currentElement = element;
 
         ajaxLoop();
     });
 }
-
-/*casper.waitForSelector('.icoMenu',
-    function success() {
-        casper.wait(5 * 1000, function(){
-            captureFunc(authCode+'_capture_LANDING_SCREEN');
-        });
-    },
-    function fail() {
-        captureFunc(authCode+'_capture_LANDING_SCREEN_fail');
-
-    });*/
-
 
 casper.run(function() {});
