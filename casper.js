@@ -66,26 +66,11 @@ function captureFunc( name ){
     captureCounter+=1;
 }
 
-casper.start(slateValetUrl, function(){
+casper.start(slateValetUrl);
 
-    // wait for 1 second so that we can boot the app and use it to clear localstorage
-    //casper.wait(1000, function(){
-        //clearStorage();
+casper.wait(3000);
 
-        /*this.reload(function() {
-            this.echo("****** loaded again after clearing local storage *******");
-            ajaxLoop();
-
-        });*/
-
-    //});
-
-    //ajaxLoop();
-});
-
-casper.thenOpen(slateValetUrl.substring(0, slateValetUrl.indexOf('/reset.html')), function(){
-
-});
+casper.thenOpen(slateValetUrl.substring(0, slateValetUrl.indexOf('/reset.html')));
 
 casper.waitForSelector("input#ext-element-17",
     function success() {
@@ -94,6 +79,7 @@ casper.waitForSelector("input#ext-element-17",
     },
     function fail() {
         captureFunc(authCode + '_capture_SERVER_URL_fail');
+        casper.echo('_capture_SERVER_URL_fail');
         casper.exit();
     });
 
@@ -105,7 +91,8 @@ casper.waitForSelector("div#SERVER_BASE_URL_SUBMIT_BUTTON",
     },
     function fail() {
         captureFunc(authCode+'_capture_SERVER_BASE_URL_SUBMIT_BUTTON_fail');
-        //casper.exit();
+        casper.echo('_capture_SERVER_URL_fail');
+        casper.exit();
     });
 
 casper.waitForSelector("div#KEY_PAD_1",
@@ -117,23 +104,19 @@ casper.waitForSelector("div#KEY_PAD_1",
         this.click("div#KEY_PAD_"+authCode.substr(4, 1));
     },
     function fail() {
+        captureFunc(authCode+'_capture_KEYPAD_fail');
+        casper.echo('_capture_KEYPAD_fail');
         casper.exit();
     });
 
 casper.waitForSelector("#MSG_BOX_OK_BUTTON",
     function success() {
-        //this.click("#MSG_BOX_OK_BUTTON");
         captureFunc(authCode+'_capture_MSG_BOX_OK_BUTTON');
-        //this.open('/');
-        /*this.evaluate(function(slateValetUrl){
-            window.location = slateValetUrl;
-        },{
-            slateValetUrl: slateValetUrl
-        });*/
         this.click("#MSG_BOX_OK_BUTTON");
     },
     function fail() {
         captureFunc(authCode+'_capture_MSG_BOX_OK_BUTTON_fail');
+        casper.echo('_capture_MSG_BOX_OK_BUTTON_fail');
         casper.exit();
     });
 
@@ -141,13 +124,11 @@ casper.waitForSelector('.welcomeTo',
     function success() {
         casper.wait(10 * 1000, function(){
             captureFunc(authCode+'_capture_SELECT_LANGUAGE');
-            //this.click('.frontLanguageFlag');
-
-
         });
     },
     function fail() {
         captureFunc(authCode+'_capture_SELECT_LANGUAGE_fail');
+        casper.echo('_capture_SELECT_LANGUAGE_fail');
         casper.exit();
     });
 
