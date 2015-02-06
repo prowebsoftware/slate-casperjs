@@ -106,7 +106,7 @@ casper.waitForSelector("div#KEY_PAD_1",
     function fail() {
         captureFunc(authCode+'_capture_KEYPAD_fail');
         casper.echo('_capture_KEYPAD_fail');
-        casper.exit();
+        //casper.exit();
     });
 
 casper.waitForSelector("#MSG_BOX_OK_BUTTON",
@@ -117,7 +117,7 @@ casper.waitForSelector("#MSG_BOX_OK_BUTTON",
     function fail() {
         captureFunc(authCode+'_capture_MSG_BOX_OK_BUTTON_fail');
         casper.echo('_capture_MSG_BOX_OK_BUTTON_fail');
-        casper.exit();
+        //casper.exit();
     });
 
 casper.waitForSelector('.welcomeTo',
