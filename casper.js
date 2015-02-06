@@ -61,8 +61,14 @@ var captureCounter = 1;
 var previousNewCounter = false;
 function captureFunc( name, newCounter ){
 
+    if ( newCounter == undefined ){
+        newCounter = false;
+    }
+
+    casper.echo(newCounter);
+
     // reset the counter if it has been passed
-    if ( newCounter!==false && previousNewCounter!==newCounter ) {
+    if ( newCounter!=false && previousNewCounter!==newCounter ) {
         captureCounter = newCounter;
         previousNewCounter = newCounter;
     }
@@ -179,7 +185,7 @@ function ajaxLoop(){
                         console.log('CANT CLICK ' + response.element);
                     }
                     casper.wait(3 * 1000, function () {
-                        captureFunc(authCode + '_' + (response.element ? response.element : 'screenshot'), response.counter ? response.counter : false );
+                        captureFunc(authCode + '_' + (response.element ? response.element : 'screenshot'), response.resetCounterOnNextJavascriptTo ? response.resetCounterOnNextJavascriptTo : false );
                     });
                 }
                 currentElement = response.element;
@@ -198,7 +204,8 @@ function ajaxLoop(){
                     });
 
                     casper.wait(5000, function () {
-                        captureFunc(authCode + '_javascript', response.counter ? response.counter : false );
+                        casper.echo(JSON.stringify(response));
+                        captureFunc(authCode + '_javascript', response.resetCounterOnNextJavascriptTo ? response.resetCounterOnNextJavascriptTo : false );
                     });
                 }
                 currentJavascript = response.javascript;
