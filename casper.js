@@ -58,15 +58,21 @@ casper.on('remote.message', function(msg) {
 
 
 var captureCounter = 1;
-function captureFunc( name, doIncrement ){
+var previousNewCounter = false;
+function captureFunc( name, newCounter ){
+
+    // reset the counter if it has been passed
+    if ( newCounter!==false && previousNewCounter!==newCounter ) {
+        captureCounter = newCounter;
+        previousNewCounter = newCounter;
+    }
+
     var captureName = captureCounter+'_'+name+'_'+casper.getCurrentUrl();
     captureName = captureName.replace(/[^a-z0-9]/gi, '_').toLowerCase()+'.png';
     casper.echo(captureName);
     casper.capture(captureName);
 
-    if ( doIncrement!==false ) {
-        captureCounter += 1;
-    }
+    captureCounter += 1;
 }
 
 casper.start(slateValetUrl);
@@ -173,7 +179,7 @@ function ajaxLoop(){
                         console.log('CANT CLICK ' + response.element);
                     }
                     casper.wait(3 * 1000, function () {
-                        captureFunc(authCode + '_' + (response.element ? response.element : 'screenshot'), false);
+                        captureFunc(authCode + '_' + (response.element ? response.element : 'screenshot'), response.counter ? response.counter : false );
                     });
                 }
                 currentElement = response.element;
@@ -192,7 +198,7 @@ function ajaxLoop(){
                     });
 
                     casper.wait(5000, function () {
-                        captureFunc(authCode + '_javascript', false);
+                        captureFunc(authCode + '_javascript', response.counter ? response.counter : false );
                     });
                 }
                 currentJavascript = response.javascript;
