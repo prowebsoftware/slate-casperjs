@@ -1,7 +1,7 @@
 var casper = require("casper").create({
     //verbose: true,
     //logLevel: 'debug',
-    waitTimeout: 30 * 1000,
+    waitTimeout: 40 * 1000,
     viewportSize: {
         width: 1024,
         height: 768
