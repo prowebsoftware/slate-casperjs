@@ -210,6 +210,12 @@ function ajaxLoop(){
                 }
                 currentJavascript = response.javascript;
             }
+
+            if ( response && response.exit ){
+                if ( response.exit===true ){
+                    casper.exit();
+                }
+            }
         }
 
         ajaxLoop();
