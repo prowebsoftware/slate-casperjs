@@ -121,7 +121,7 @@ casper.waitForSelector("div#KEY_PAD_1",
     function fail() {
         captureFunc(authCode+'_capture_KEYPAD_fail');
         casper.echo('_capture_KEYPAD_fail');
-        //casper.exit();
+        casper.exit();
     });
 
 casper.waitForSelector("#MSG_BOX_OK_BUTTON",
@@ -185,7 +185,7 @@ function ajaxLoop(){
                         console.log('CANT CLICK ' + response.element);
                     }
                     casper.wait(3 * 1000, function () {
-                        captureFunc(authCode + '_' + (response.element ? response.element : 'screenshot'), response.resetCounterOnNextJavascriptTo ? response.resetCounterOnNextJavascriptTo : false );
+                        captureFunc(authCode + '_' + (response.element ? response.element : 'screenshot'), response.resetCounterOnNextCommandTo ? response.resetCounterOnNextCommandTo : false );
                     });
                 }
                 currentElement = response.element;
@@ -205,7 +205,7 @@ function ajaxLoop(){
 
                     casper.wait(5000, function () {
                         casper.echo(JSON.stringify(response));
-                        captureFunc(authCode + '_javascript', response.resetCounterOnNextJavascriptTo ? response.resetCounterOnNextJavascriptTo : false );
+                        captureFunc(authCode + '_javascript', response.resetCounterOnNextCommandTo ? response.resetCounterOnNextCommandTo : false );
                     });
                 }
                 currentJavascript = response.javascript;
