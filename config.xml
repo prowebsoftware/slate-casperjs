@@ -24,14 +24,14 @@
                 /usr/local/bin/redis-cli -h jack.redistogo.com -p 11118 -a 9da2ff1a0a4921353fd07a5dc2f25d66 flushall</command>
         </hudson.tasks.Shell>
         <com.tikal.jenkins.plugins.multijob.MultiJobBuilder>
-            <phaseName>casperjs</phaseName>
+            <phaseNcasperjsame>casperjs</phaseName>
             <phaseJobs>
             <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                 <abortAllJob>false</abortAllJob>
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12345</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -50,7 +50,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12346</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -69,7 +69,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12347</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -88,7 +88,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12348</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -107,7 +107,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12349</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -126,7 +126,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12350</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -145,7 +145,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12351</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -164,7 +164,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12352</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -183,7 +183,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12353</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -202,7 +202,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12354</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -221,7 +221,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12355</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -240,7 +240,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12356</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -259,7 +259,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12357</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -278,7 +278,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12358</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -297,7 +297,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12359</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -316,7 +316,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12360</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -335,7 +335,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12361</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -354,7 +354,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12362</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -373,7 +373,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12363</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -392,7 +392,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12364</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -411,7 +411,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12365</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -430,7 +430,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12366</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -449,7 +449,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12367</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -468,7 +468,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12368</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -487,7 +487,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12369</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -506,7 +506,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12370</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -525,7 +525,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12371</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -544,7 +544,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12372</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -563,7 +563,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12373</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -582,7 +582,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12374</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -601,7 +601,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12375</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -620,7 +620,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12376</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -639,7 +639,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12377</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -658,7 +658,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12378</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -677,7 +677,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12379</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -696,7 +696,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12380</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -715,7 +715,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12381</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -734,7 +734,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12382</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -753,7 +753,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12383</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -772,7 +772,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12384</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -791,7 +791,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12385</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -810,7 +810,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12386</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -829,7 +829,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12387</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -848,7 +848,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12388</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -867,7 +867,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12389</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -886,7 +886,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12390</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -905,7 +905,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12391</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -924,7 +924,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12392</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -943,7 +943,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12393</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -962,7 +962,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12394</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -981,7 +981,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12395</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -1000,7 +1000,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12396</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -1019,7 +1019,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12397</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -1038,7 +1038,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12398</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -1057,7 +1057,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12399</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -1076,7 +1076,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12400</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
@@ -1095,7 +1095,7 @@
                 <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
                 <condition></condition>
                 <configs>
-                    <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                     <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.25">
                         <properties>auth_code=12401</properties>
                     </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                 </configs>
