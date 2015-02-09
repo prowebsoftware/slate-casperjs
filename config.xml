@@ -26,7 +26,6 @@
         <com.tikal.jenkins.plugins.multijob.MultiJobBuilder>
             <phaseName>casperjs</phaseName>
             <phaseJobs>
-                <?xml version="1.0" encoding="UTF-8"?>
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
