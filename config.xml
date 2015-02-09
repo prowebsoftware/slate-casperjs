@@ -24,7 +24,7 @@
                 /usr/local/bin/redis-cli -h jack.redistogo.com -p 11118 -a 9da2ff1a0a4921353fd07a5dc2f25d66 flushall</command>
         </hudson.tasks.Shell>
         <com.tikal.jenkins.plugins.multijob.MultiJobBuilder>
-            <phaseNcasperjsame>casperjs</phaseName>
+            <phaseName>casperjs</phaseName>
             <phaseJobs>
             <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                 <abortAllJob>false</abortAllJob>
