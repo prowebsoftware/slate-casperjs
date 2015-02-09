@@ -8,7 +8,8 @@ inotifywait -m -r $1 -e create -e moved_to |
         if [[ $file =~ ^-?[0-9]+$ ]]
         then
             echo "${file} is an integer"
-            scp $path$file slate@prowebsoftware.redirectme.net:~/Documents/captures/$file/
+            #scp $path$file slate@prowebsoftware.redirectme.net:~/Documents/captures/$file/
+            ssh slate@prowebsoftware.redirectme.net ". ~/Documents/captures/; mkdir ${file}"
         else
             echo "${file} is not an integer"
             dirname=$(echo $path | cut -d"/" -f7);
