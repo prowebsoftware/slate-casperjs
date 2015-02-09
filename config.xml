@@ -29,7 +29,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12345</properties>
@@ -43,12 +43,12 @@
                     <jobName>slate-casperjs</jobName>
                     <killPhaseOnJobResultCondition>NEVER</killPhaseOnJobResultCondition>
                     <maxRetries>0</maxRetries>
-                    <parsingRulesPath />
+                    <parsingRulesPath></parsingRulesPath>
                 </com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12346</properties>
@@ -67,7 +67,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12347</properties>
@@ -86,7 +86,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12348</properties>
@@ -105,7 +105,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12349</properties>
@@ -124,7 +124,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12350</properties>
@@ -143,7 +143,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12351</properties>
@@ -162,7 +162,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12352</properties>
@@ -181,7 +181,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12353</properties>
@@ -200,7 +200,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12354</properties>
@@ -219,7 +219,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12355</properties>
@@ -238,7 +238,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12356</properties>
@@ -257,7 +257,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12357</properties>
@@ -276,7 +276,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12358</properties>
@@ -295,7 +295,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12359</properties>
@@ -314,7 +314,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12360</properties>
@@ -333,7 +333,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12361</properties>
@@ -352,7 +352,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12362</properties>
@@ -371,7 +371,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12363</properties>
@@ -390,7 +390,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12364</properties>
@@ -409,7 +409,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12365</properties>
@@ -428,7 +428,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12366</properties>
@@ -447,7 +447,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12367</properties>
@@ -466,7 +466,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12368</properties>
@@ -485,7 +485,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12369</properties>
@@ -504,7 +504,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12370</properties>
@@ -523,7 +523,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12371</properties>
@@ -542,7 +542,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12372</properties>
@@ -561,7 +561,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12373</properties>
@@ -580,7 +580,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12374</properties>
@@ -599,7 +599,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12375</properties>
@@ -618,7 +618,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12376</properties>
@@ -637,7 +637,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12377</properties>
@@ -656,7 +656,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12378</properties>
@@ -675,7 +675,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12379</properties>
@@ -694,7 +694,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12380</properties>
@@ -713,7 +713,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12381</properties>
@@ -732,7 +732,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12382</properties>
@@ -751,7 +751,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12383</properties>
@@ -770,7 +770,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12384</properties>
@@ -789,7 +789,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12385</properties>
@@ -808,7 +808,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12386</properties>
@@ -827,7 +827,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12387</properties>
@@ -846,7 +846,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12388</properties>
@@ -865,7 +865,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12389</properties>
@@ -884,7 +884,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12390</properties>
@@ -903,7 +903,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12391</properties>
@@ -922,7 +922,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12392</properties>
@@ -941,7 +941,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12393</properties>
@@ -960,7 +960,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12394</properties>
@@ -979,7 +979,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12395</properties>
@@ -998,7 +998,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12396</properties>
@@ -1017,7 +1017,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12397</properties>
@@ -1036,7 +1036,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12398</properties>
@@ -1055,7 +1055,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12399</properties>
@@ -1074,7 +1074,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12400</properties>
@@ -1093,7 +1093,7 @@
                 <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
                     <abortAllJob>false</abortAllJob>
                     <buildOnlyIfSCMChanges>false</buildOnlyIfSCMChanges>
-                    <condition />
+                    <condition></condition>
                     <configs>
                         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
                             <properties>auth_code=12401</properties>
