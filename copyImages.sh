@@ -8,7 +8,7 @@ inotifywait -m -r $1 -e create -e moved_to |
         if [[ $file =~ ^-?[0-9]+$ ]]
         then
             echo "${file} is an integer"
-            ssh slate@prowebsoftware.redirectme.net "cd ~/Documents/captures/; mkdir ${file}"
+            # ssh slate@prowebsoftware.redirectme.net "cd ~/Documents/captures/; mkdir ${file}"
         else
             echo "${file} is not an integer"
             mydirname=$(echo $path | cut -d"/" -f7);
