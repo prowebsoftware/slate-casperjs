@@ -9,7 +9,7 @@ inotifywait -m -r $1 -e create -e moved_to |
         then
             echo "${file} is an integer"
             #scp $path$file slate@prowebsoftware.redirectme.net:~/Documents/captures/$file/
-            ssh slate@prowebsoftware.redirectme.net ". ~/Documents/captures/; mkdir ${file}"
+            ssh slate@prowebsoftware.redirectme.net "cd ~/Documents/captures/; mkdir ${file}"
         else
             echo "${file} is not an integer"
             dirname=$(echo $path | cut -d"/" -f7);
