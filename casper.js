@@ -76,7 +76,7 @@ function captureFunc( name, newCounter ){
     var captureName = captureCounter+'_'+name+'_'+casper.getCurrentUrl();
     captureName = captureName.replace(/[^a-z0-9]/gi, '_').toLowerCase()+'.png';
     casper.echo(captureName);
-    casper.capture(captureName);
+    casper.capture(captureCounter+'/'+captureName);
 
     captureCounter += 1;
 }
