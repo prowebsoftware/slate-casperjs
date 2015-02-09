@@ -5,9 +5,10 @@ inotifywait -m -r $1 -e create -e moved_to |
         # scp $path$file slate@prowebsoftware.redirectme.net:~/Documents/captures/$file
         if [ -z "${file##+([0-9])}" ]
         then
-          echo "${varname} is an integer"
+          echo "${file} is an integer"
           scp $path$file slate@prowebsoftware.redirectme.net:~/Documents/captures/$file/
         else
+            echo "${file} is not an integer"
           scp $path$file slate@prowebsoftware.redirectme.net:~/Documents/captures
         fi
     done
