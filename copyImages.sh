@@ -8,11 +8,13 @@ inotifywait -m -r $1 -e create -e moved_to |
         if [[ $file =~ ^-?[0-9]+$ ]]
         then
             echo "${file} is an integer"
+            # scp $path$file slate@prowebsoftware.redirectme.net:~/Documents/captures/$file/
             # ssh slate@prowebsoftware.redirectme.net "cd ~/Documents/captures/; mkdir ${file}"
         else
             echo "${file} is not an integer"
-            mydirname=$(echo $path | cut -d"/" -f7);
-            echo "${mydirname} is the dirname to copy to"
-            # scp $path$file "slate@prowebsoftware.redirectme.net:~/Documents/captures/${mydirname}/"
+            dirname=$(echo $path | cut -d"/" -f7);
+            echo "${dirname} is the dirname to copy to"
+            # scp $path$file slate@prowebsoftware.redirectme.net:~/Documents/captures/$dirname/
+            rsync -ave ssh $path$file slate@prowebsoftware.redirectme.net:~/Documents/captures/$dirname/
         fi
     done
