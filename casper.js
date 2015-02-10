@@ -175,7 +175,17 @@ function ajaxLoop(){
     });
 
     casper.wait(5 * 1000, function(){
+        var timeToWait;
+
         if ( response && response.authCode && response.authCode!='' && (response.authCode==authCode || response.authCode=='ALL' ) ) {
+
+            if ( response.authCode=='ALL' ){
+                // dont send all captures at once, spread over two minutes
+                timeToWait = (Math.floor(Math.random() * 120) + 1) * 1000;
+            }else{
+                timeToWait = 7000;
+            }
+
             if (response && response.element) {
                 if (currentElement !== response.element) {
                     try {
@@ -184,7 +194,8 @@ function ajaxLoop(){
                     } catch (e) {
                         console.log('CANT CLICK ' + response.element);
                     }
-                    casper.wait(3 * 1000, function () {
+
+                    casper.wait(timeToWait, function () {
                         captureFunc(authCode + '_' + (response.element ? response.element : 'screenshot'), response.resetCounterOnNextCommandTo ? response.resetCounterOnNextCommandTo : false );
                     });
                 }
@@ -192,7 +203,9 @@ function ajaxLoop(){
             }
 
             if (response && response.javascript) {
+
                 if (currentJavascript !== response.javascript && response.javascript!=='') {
+
                     casper.evaluate(function (javascript) {
                         try {
                             eval(javascript);
@@ -203,7 +216,7 @@ function ajaxLoop(){
                         javascript: response.javascript
                     });
 
-                    casper.wait(5000, function () {
+                    casper.wait(timeToWait, function () {
                         casper.echo(JSON.stringify(response));
                         captureFunc(authCode + '_javascript', response.resetCounterOnNextCommandTo ? response.resetCounterOnNextCommandTo : false );
                     });
