@@ -68,14 +68,31 @@ var i = -1;
 function getLinks() {
     // Check if there is a 'Pending' section in the list else we will get the already Approved links
     var gengoSections = document.querySelectorAll('div.translation_list');
-    if ( gengoSections.length >= 2 ) {
-        var links = document.querySelectorAll('div.translation_list:nth-child(2) .large-details-link');
+
+    // try and find the Pending list.
+    var lists = document.querySelectorAll('h2.no_border'),
+        pendingList = false;
+
+    if ( lists && lists.length ){
+        for ( i=0; i < lists.length; i++ ){
+            if ( lists[i].innerHTML.indexOf('Pending')!==-1 ){
+                pendingList = lists[i];
+            }
+        }
+    }
+
+    if ( pendingList ){
+        console.log('Found pending translations...');
+        var links = $(pendingList).parent().find('.large-details-link');
         return Array.prototype.map.call(links, function (e) {
             return e.getAttribute('href');
         });
     }else{
+        console.log('No pending list found, returning empty');
         return [];
     }
+
+    /**/
 }
 
 casper.start('https://sandbox.gengo.com/auth/form/login/', function(){
