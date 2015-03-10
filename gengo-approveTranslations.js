@@ -81,7 +81,7 @@ casper.start('https://sandbox.gengo.com/auth/form/login/', function(){
 
 casper.waitForResource("https://sandbox.gengo.com/auth/form/login/",function() {
     //this.fill('form[action="https://sandbox.gengo.com/auth/login/"]', {
-    this.fill('form', {
+    this.fill('form:first-of-type', {
         login_email : 'ashley.coker@prowebsoftware.net',
         login_password: 'rVr#fJ9(6x'
     }, true);
