@@ -78,7 +78,7 @@ function getLinks() {
 casper.start('https://sandbox.gengo.com/auth/form/login/', function(){
     casper.echo('URL https://sandbox.gengo.com/auth/form/login/ loaded');
     //this.fill('form[action="https://sandbox.gengo.com/auth/login/"]', {
-    this.fill('#login > form', {
+    this.fill('#login>form', {
         login_email : 'ashley.coker@prowebsoftware.net',
         login_password: 'rVr#fJ9(6x'
     }, true);
